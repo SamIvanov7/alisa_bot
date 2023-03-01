@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: alisa_bot
+    volumes:
+      - ./grebni.txt:/app/grebni.txt
+      - ./followers_1.json:/app/followers_1.json
+      - ./following.json:/app/following.json
+    environment:
+      - TOKEN=your_telegram_bot_token
+    command: python3 insta_bot_folowers.py
