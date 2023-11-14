@@ -1,10 +1,13 @@
 import logging
 
 import telebot
-
+import os
 from grebne_extractor import process_files, remove_common_items
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot("TOKEN")
+load_dotenv()
+API_TOKEN = os.getenv("API_TOKEN")
+bot = telebot.TeleBot(API_TOKEN)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
